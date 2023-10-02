@@ -1,0 +1,27 @@
+﻿@page
+@model TesteHenrique.Pages.Students.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit Student</h1>
+
+<div>
+    <form method="post">
+        <input type="hidden" asp-for="Student.Id" />
+
+        <div class="form-group">
+            <label asp-for="Student.Name"></label>
+            <input asp-for="Student.Name" class="form-control" />
+            <span asp-validation-for="Student.Name" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Student.Email"></label>
+            <input asp-for="Student.Email" class="form-control" />
+            <span asp-validation-for="Student.Email" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>

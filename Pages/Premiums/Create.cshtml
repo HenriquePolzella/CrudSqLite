@@ -1,0 +1,37 @@
+﻿@page
+@model TesteHenrique.Pages.Premiums.CreateModel
+@{
+    ViewData["Title"] = "Create Premium";
+}
+
+<h1>Create Premium</h1>
+
+<div>
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="Premium.Title"></label>
+            <input asp-for="Premium.Title" class="form-control" />
+            <span asp-validation-for="Premium.Title" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Premium.StartDate"></label>
+            <input asp-for="Premium.StartDate" type="date" class="form-control" />
+            <span asp-validation-for="Premium.StartDate" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Premium.EndDate"></label>
+            <input asp-for="Premium.EndDate" type="date" class="form-control" />
+            <span asp-validation-for="Premium.EndDate" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Premium.StudentId"></label>
+            <select asp-for="Premium.StudentId" asp-items="Model.StudentSelectList" class="form-control"></select>
+            <span asp-validation-for="Premium.StudentId" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+</div>

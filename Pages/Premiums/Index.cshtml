@@ -1,0 +1,55 @@
+﻿@page
+@model TesteHenrique.Pages.Premiums.IndexModel
+@{
+    ViewData["Title"] = "Premium List";
+}
+
+<h1>Premium List</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Premium.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Premium.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Premium.EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Premium.Student.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Premiums)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Student.Name)
+                </td>
+                <td>
+                    <a asp-page="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
